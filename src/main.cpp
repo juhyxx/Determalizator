@@ -7,7 +7,7 @@
 #define PIN_DEBUG 1  // PB1 (pin  6)
 #define PIN_START 2  // PB2 (pin 7)
 
-const int initTime[] = {120, 300}; // čas v sekundách pro timeout
+const int initTime[] = {120, 300}; // time in seconds for timeout
 const int timeQ = 500;
 long time = initTime[0];
 
@@ -52,11 +52,11 @@ void setup()
     pinMode(PIN_LED, OUTPUT);
     pinMode(PIN_SERVO, OUTPUT);
 
-    // Povolit přerušení na pin change
-    GIMSK |= (1 << PCIE);
+    // Enable pin change interrupt
+    GIMSK |= (1 << PCIE);   // Enable pin change interrupt
     PCMSK |= (1 << PCINT2); // PB2
-    sei();                  // globální povolení přerušení
-    reset();                // výchozí pozice
+    sei();                  // global interrupt enable
+    reset();                // default position
 }
 
 void sleepNow()
@@ -92,7 +92,7 @@ void loop()
             if (buttonOn)
             {
                 buttonOn = false;
-                t = time * 1000; // reset časovače
+                t = time * 1000; // reset timer
             }
         }
         kick();
