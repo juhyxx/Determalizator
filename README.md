@@ -13,6 +13,6 @@ The most important parameter is weight of device, glider kit contains 30g balast
 | ATtiny85                     | 1 g      |
 | LiPol baterie 502020 150mAh  | 4 g      |
 | JST konektor + vodiče        | 1 g      |
-| (Microswitch   | 0.5 g    |
+| Microswitch   | 0.5 g    |
 | LED   | 0.5 g    |
 
